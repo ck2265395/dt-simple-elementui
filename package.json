@@ -1,0 +1,75 @@
+{
+  "name": "dt-simple-elementui",
+  "version": "1.0.0",
+  "description": "一个简单的elementUI库, Vue3, 图标基于fortawesome/free-solid-svg-icons, Tooltip基于popper",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "components",
+    "elementui",
+    "vue3",
+    "Library"
+  ],
+  "files": [
+    "dist"
+  ],
+  "module": "dist/es/dt-simple-elementui.js",
+  "main": "dist/es/dt-simple-elementui.umd.cjs",
+  "exports": {
+    ".": {
+      "import": "./dist/es/dt-simple-elementui.js",
+      "require": "./dist/es/dt-simple-elementui.umd.cjs"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/umd/dt-simple-elementui.css"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build-dev": "vite build",
+    "build": "npm run build-es && npm run build-umd && npm run move-style",
+    "build-es": "vite build --config vite.es.config.js",
+    "build-umd": "vite build --config vite.umd.config.js",
+    "move-style": "move-file dist/es/dt-simple-elementui.css dist/style.css",
+    "preview": "vite preview",
+    "lint": "run-s lint:*",
+    "lint:oxlint": "oxlint . --fix",
+    "lint:eslint": "eslint . --fix --cache",
+    "format": "prettier --write --experimental-cli src/"
+  },
+  "dependencies": {
+    "@floating-ui/core": "^1.7.5",
+    "@floating-ui/vue": "^1.1.11",
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "@fortawesome/vue-fontawesome": "^3.2.0",
+    "lodash-es": "^4.18.1",
+    "move-file-cli": "^3.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.32"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@rollup/plugin-commonjs": "^29.0.2",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "@vitejs/plugin-vue-jsx": "^5.1.5",
+    "eslint": "^10.2.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-oxlint": "~1.60.0",
+    "eslint-plugin-vue": "~10.8.0",
+    "globals": "^17.5.0",
+    "npm-run-all2": "^8.0.4",
+    "oxlint": "~1.60.0",
+    "prettier": "3.8.3",
+    "sass-embedded": "^1.99.0",
+    "vite": "^8.0.8",
+    "vite-plugin-vue-devtools": "^8.1.1",
+    "vue": "^3.5.32",
+    "vue-router": "^5.0.4"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  }
+}
